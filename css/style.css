@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body{
+    color: azure;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    /* padding-top: -30; */
+}
+
+.botones {
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+    opacity: 0; /* Oculto al inicio */
+    transition: opacity 0.5s ease; /* Animación de transición para hacer suave el cambio de visibilidad */
+}
+
+.botones a {
+    background-color: #0a2be9;
+    padding: 9px;
+    border-radius: 80px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.botones a:focus{
+    background-color: rgb(50, 194, 194);
+}
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90%{
+        color: #111;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    
+    .button a{
+        font-size: 1rem;
+    }
+}
+/******************estrellas***********************/
+#stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: radial-gradient(circle, #39c6d6 30%, #1e5a66 70%); /* Azul claro al centro, azul oscuro hacia el borde */
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 2s infinite;
+    box-shadow: 0 0 10px 5px rgba(57, 198, 214, 0.5); /* Halo azulado */
+}
+
+.star::before,
+.star::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, #39c6d6, #1e5a66); /* Gradiente de azul claro a azul oscuro */
+    border-radius: 50%;
+    opacity: 0.8;
+    transform-origin: center;
+}
+
+.star::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 15px;
+    height: 2px;
+}
+
+.star::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 15px;
+    height: 2px;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}

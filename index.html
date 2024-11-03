@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
+    <style>
+        /* Estilos para el botón */
+        .botones {
+            padding: 9px;
+            border-radius: 80px;
+            background-color: transparent;
+            border: none;
+            opacity: 0; /* Oculto al inicio */
+            animation: aparecer 0.5s ease-out 4s forwards; /* Aparece después de 2 segundos */
+        }
+
+        .botones a {
+            background-color: #0a2be9;
+            padding: 9px;
+            border-radius: 80px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @keyframes aparecer {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="greetings">
+        <span>H</span>
+        <span>E</span>
+        <span>Y</span>
+        <span>Y</span>
+        <span>!</span>
+    </div>
+    <div class="description">
+        <span>Como este fondo, eres para mi un Lucero💖😊</span>
+    </div>
+    <div class="button" >
+        <button class="botones">
+            <a href="flower.html" style="color: #fff;">¡Presiona para que veas tu sorpresa!</a>
+        </button>
+        
+    </div>
+
+    <div id="stars-container"></div>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
